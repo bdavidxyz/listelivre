@@ -1,1 +1,29 @@
-Hello
+<%- livres = local_assigns[:livres] %>
+<%= link_to "Ajouter vos propres livres", admin_root_path %>
+
+<br>
+<div>&nbsp;</div>
+<h1>Bibliothèque sélidaire</h1>
+
+
+<table>
+    <caption>
+      
+    </caption>
+    <thead>
+      <tr>
+        <th align="left">titre</th>
+        <th align="left">auteur</th>
+        <th align="left">séliste</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% livres.each do |livre| %>
+        <tr>
+          <td align="left"><%= livre[:titre] %></td>
+          <td align="left"><%= livre[:auteur] %></td>
+          <td align="left"><%= livre[:proprietaire] %></td>
+        </tr>        
+      <% end %>
+    </tbody>
+  </table>
