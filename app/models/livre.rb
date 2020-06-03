@@ -1,0 +1,3 @@
+class Livre < ApplicationRecord
+  
+end
