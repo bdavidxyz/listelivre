@@ -5,11 +5,7 @@ class DefaultController < ApplicationController
   end
   
   def post_superadmin
-    password = extract_param("super_mdp")
-    p '----------------------'
-    p password
-    p '----------------------'
-    res = User.create!(email: "db@sel.com", password: password)
+    res = User.create!(email: "db@sel.com", password: extract_param("super_mdp"))
     render json: {
       status: "ok"
     }
