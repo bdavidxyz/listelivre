@@ -7,23 +7,21 @@
 
 
 <table>
-    <caption>
-      
-    </caption>
-    <thead>
+  <caption></caption>
+  <thead>
+    <tr>
+      <th align="left">Titre</th>
+      <th align="left">Auteur</th>
+      <th align="left">Séliste</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% livres.each do |livre| %>
       <tr>
-        <th align="left">titre</th>
-        <th align="left">auteur</th>
-        <th align="left">séliste</th>
-      </tr>
-    </thead>
-    <tbody>
-      <% livres.each do |livre| %>
-        <tr>
-          <td align="left"><%= livre[:titre] %></td>
-          <td align="left"><%= livre[:auteur] %></td>
-          <td align="left"><%= livre[:proprietaire] %></td>
-        </tr>        
-      <% end %>
-    </tbody>
-  </table>
+        <td align="left"><%= livre[:titre] %></td>
+        <td align="left"><%= livre[:auteur] %></td>
+        <td align="left"><%= livre[:proprietaire] %></td>
+      </tr>        
+    <% end %>
+  </tbody>
+</table>

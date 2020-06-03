@@ -1,0 +1,24 @@
+<div id="preintro">
+  Ecrivez-moi pour avoir accès, vous pourrez ajouter vos livres.
+</div>
+<div id="preintro2">
+  N'hésitez pas !
+</div>
+<strong id="preintro3">
+  bdavidxyz [at] gmail [point] com
+</strong>
+<div id="clearance" class="sign-in">
+  <h2><%= t(".title") %></h2>
+
+  <%= render partial: '/sessions/form' %>
+
+  <br>
+
+  <%= link_to(
+    "← Retour à l'accueil",
+    root_path,
+    class: "navigation__link navigation__link--active")
+  %>
+
+
+</div>

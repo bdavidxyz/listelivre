@@ -12,7 +12,7 @@ module Admin
 
     def authenticate_admin
       unless current_user
-        redirect_to root_path
+        redirect_to sign_in_path
       end
     end
 
