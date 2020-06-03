@@ -1,0 +1,8 @@
+<div style="margin-top: 2rem;">
+  Superadmin par défaut
+<%= form_with url: default_post_superadmin_path, local:false, id: 'admin_post_sa_form' do |form| %>
+  <%= form.text_area :super_mdp, cols: 40, rows: 5, placeholder: "mon supermdp" %>
+  <%= form.submit 'Charger le superadmin'%>
+<% end %>
+</div>
+
