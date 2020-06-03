@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
       resources :livres
+      resources :users
 
       root to: "livres#index"
     end
@@ -10,4 +11,5 @@ Rails.application.routes.draw do
   post 'default/post_superadmin'
  
   root 'welcome#index'
+
 end

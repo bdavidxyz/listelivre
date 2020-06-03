@@ -1,12 +1,3 @@
-<%#
-# Navigation
-
-This partial is used to display the navigation in Administrate.
-By default, the navigation contains navigation links
-for all resources in the admin dashboard,
-as defined by the routes in the `admin/` namespace
-%>
-
 <nav class="navigation" role="navigation">
 
   <div><span><%= current_user.email %></span></div>
@@ -24,5 +15,12 @@ as defined by the routes in the `admin/` namespace
       root_path,
       class: "navigation__link navigation__link--inactive")
   %>
+  <% if current_user.role === "superadmin" %>
+    <%= link_to(
+        "Utilisateurs",
+        admin_users_path,
+        class: "navigation__link navigation__link--inactive")
+    %>    
+  <% end %>
 
 </nav>

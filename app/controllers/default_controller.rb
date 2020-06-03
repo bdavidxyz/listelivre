@@ -11,6 +11,4 @@ class DefaultController < ApplicationController
     }
   end
   
-
-
 end
