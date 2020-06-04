@@ -27,3 +27,7 @@
     <%= f.submit "Ajouter" %>
   </div>
 <% end %>
+<script type="text/javascript">
+  document.querySelector("input[name='livre[proprietaire]']").setAttribute("disabled", "disabled");
+  document.querySelector("input[name='livre[proprietaire]']").setAttribute("value", document.querySelector(".current-user").textContent.split("@")[0]);
+</script>

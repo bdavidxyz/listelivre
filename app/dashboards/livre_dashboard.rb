@@ -32,14 +32,9 @@ class LivreDashboard < Administrate::BaseDashboard
   # SHOW_PAGE_ATTRIBUTES
   # an array of attributes that will be displayed on the model's show page.
   SHOW_PAGE_ATTRIBUTES = %i[
-  id
   titre
   auteur
-  date_emprunt
-  date_retour
-  est_reserve
   proprietaire
-  resume
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -48,6 +43,7 @@ class LivreDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   titre
   auteur
+  proprietaire
   ].freeze
 
   # COLLECTION_FILTERS

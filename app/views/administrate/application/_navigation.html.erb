@@ -1,6 +1,6 @@
 <nav class="navigation" role="navigation">
 
-  <div><span><%= current_user.email %></span></div>
+  <div><span class="current-user"><%= current_user.email %></span></div>
   <div><%= link_to 'Se déconnecter', sign_out_path, method: :delete %></div>
 
   <br>
