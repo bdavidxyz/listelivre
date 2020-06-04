@@ -4,7 +4,7 @@ module Admin
     def destroy
       if requested_resource.destroy
         Livre.where(proprietaire: initiales).destroy_all
-        flash[:notice] = translate_with_resource("destroy.success")
+        flash[:notice] = "Votre compte a été entièrement supprimé, ainsi que vos livres"
       else
         flash[:error] = requested_resource.errors.full_messages.join("<br/>")
       end

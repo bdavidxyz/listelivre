@@ -12,6 +12,14 @@
       class: "button",
     ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
   </div>
+  <div>
+    <%= link_to(
+      "Tous mes livres",
+      admin_root_path,
+      class: "button",
+      style: "margin-left: 1rem"
+    ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
+  </div>
 </header>
 
 <section class="main-content__body">

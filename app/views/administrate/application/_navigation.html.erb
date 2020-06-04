@@ -1,3 +1,5 @@
+<%- livre_title = current_user.role == "superadmin" ? "Tous les livres" : "Mes livres" %>
+
 <nav class="navigation" role="navigation">
 
   <div><span class="current-user"><%= current_user.email %></span></div>
@@ -7,7 +9,7 @@
   <br>
 
   <%= link_to(
-      "Mes livres",
+      "#{livre_title}",
       admin_livres_path,
       class: "navigation__link navigation__link--active")
   %>

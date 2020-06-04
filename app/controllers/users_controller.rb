@@ -14,9 +14,10 @@ class UsersController < Clearance::UsersController
     @user = user_from_params
 
     if @user.save
-      sign_in @user
-      redirect_back_or url_after_create
+      flash[:notice] = "Nouvel utilisateur créé avec succès : #{@user.email}"
+      redirect_to root_path
     else
+      flash[:notice] = "Erreur lors de la création du nouvel utilisateur"
       render template: "users/new"
     end
   end
