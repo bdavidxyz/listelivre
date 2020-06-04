@@ -28,6 +28,7 @@
   </div>
 <% end %>
 <script type="text/javascript">
-  document.querySelector("input[name='livre[proprietaire]']").setAttribute("disabled", "disabled");
+  document.querySelector("input[name='livre[proprietaire]']").setAttribute("readonly", "true");
+  document.querySelector("input[name='livre[proprietaire]']").setAttribute("style", "background-color: #f2f2f2");
   document.querySelector("input[name='livre[proprietaire]']").setAttribute("value", document.querySelector(".current-user").textContent.split("@")[0]);
 </script>

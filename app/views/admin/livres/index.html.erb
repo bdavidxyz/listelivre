@@ -22,13 +22,6 @@
     ) %>
   <% end %>
 
-  <div>
-    <%= link_to(
-      "Ajouter un de mes livres",
-      [:new, namespace, page.resource_path],
-      class: "button",
-    ) if valid_action?(:new) && show_action?(:new, new_resource) %>
-  </div>
 </header>
 
 <section class="main-content__body main-content__body--flush">
