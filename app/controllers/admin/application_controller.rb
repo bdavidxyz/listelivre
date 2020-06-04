@@ -10,5 +10,9 @@ module Admin
       end
     end
 
+    def extract_param(pname)
+      params.extract!(pname).permit(pname).to_h[pname]
+    end
+
   end
 end
