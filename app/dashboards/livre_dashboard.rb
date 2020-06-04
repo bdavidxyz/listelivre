@@ -48,11 +48,6 @@ class LivreDashboard < Administrate::BaseDashboard
   FORM_ATTRIBUTES = %i[
   titre
   auteur
-  date_emprunt
-  date_retour
-  est_reserve
-  proprietaire
-  resume
   ].freeze
 
   # COLLECTION_FILTERS

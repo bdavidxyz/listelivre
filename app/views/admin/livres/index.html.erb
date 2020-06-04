@@ -4,8 +4,15 @@
 
 <header class="main-content__header" role="banner">
   <h1 class="main-content__page-title" id="page-title">
-    <%= content_for(:title) %>
+    Mes livres
   </h1>
+  <div>
+    <%= link_to(
+      "Ajouter un de mes livres",
+      [:new, namespace, page.resource_path],
+      class: "button",
+    ) if valid_action?(:new) && show_action?(:new, new_resource) %>
+  </div>
 
   <% if show_search_bar %>
     <%= render(
@@ -17,10 +24,7 @@
 
   <div>
     <%= link_to(
-      t(
-        "administrate.actions.new_resource",
-        name: page.resource_name.titleize.downcase
-      ),
+      "Ajouter un de mes livres",
       [:new, namespace, page.resource_path],
       class: "button",
     ) if valid_action?(:new) && show_action?(:new, new_resource) %>
