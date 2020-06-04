@@ -1,5 +1,6 @@
 class UsersController < Clearance::UsersController
-  before_action :redirect_signed_in_users, only: [:create, :new]
+
+  before_action :must_be_superadmin, only: [:create, :new]
   skip_before_action :require_login, only: [:create, :new], raise: false
 
   def new
@@ -19,6 +20,14 @@ class UsersController < Clearance::UsersController
   end
 
   private
+
+  def must_be_superadmin
+    if signed_in? && current_user.role == 'superadmin'
+      true
+    else
+      redirect_to Clearance.configuration.redirect_url
+    end
+  end
 
   def redirect_signed_in_users
     if signed_in?
