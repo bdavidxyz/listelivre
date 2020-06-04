@@ -1,0 +1,15 @@
+<div id="clearance" class="sign-up">
+  <h2>Inscrire un nouveau séliste</h2>
+
+  <%= form_for @user do |form| %>
+    <%= render partial: '/users/form', object: form %>
+
+    <div class="submit-field">
+      <%= form.submit "Confirmer l'inscription" %>
+    </div>
+
+    <div class="other-links">
+      <%= link_to "Ecran de connexion", sign_in_path %>
+    </div>
+  <% end %>
+</div>
