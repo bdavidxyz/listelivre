@@ -1,8 +1,9 @@
 <nav class="navigation" role="navigation">
 
   <div><span class="current-user"><%= current_user.email %></span></div>
-  <div><%= link_to 'Se déconnecter', sign_out_path, method: :delete %></div>
+  <div><%= link_to 'Se déconnecter', sign_out_path, method: :delete, confirm: 'Êtes-vous sûr ?' %></div>
 
+  <br>
   <br>
 
   <%= link_to(
@@ -22,5 +23,10 @@
         class: "navigation__link navigation__link--inactive")
     %>    
   <% end %>
+
+  <br>
+  <br>
+  <div><%= link_to 'Supprimer mon compte', admin_user_path(current_user.id), method: :delete  %></div>
+
 
 </nav>

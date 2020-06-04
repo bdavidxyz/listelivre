@@ -1,4 +1,7 @@
 fr:
+  activerecord:
+    models:
+      user: Utilisateur
   clearance_mailer:
     change_password:
       opening:
@@ -12,8 +15,7 @@ fr:
     failure_after_update:
       'Le mot de passe ne peut être vide.'
     failure_after_create:
-      "Adresse e-mail ou mot de passe incorrect. Voulez-vous créer un nouveau compte ?
-       <a href='%{sign_up_path}'>S'inscrire</a>."
+      "Adresse e-mail ou mot de passe incorrect."
     failure_when_access_denied: "S'il vous plaît, vous devez vous identifier"
   helpers:
     submit:

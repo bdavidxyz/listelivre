@@ -9,7 +9,12 @@
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body id="livresel_body">
+    <% flash.each do |type, msg| %>
+      <mark>
+        <%= msg %>
+      </mark>
+    <% end %>
     <%= yield %>
   </body>
 </html>

@@ -10,6 +10,7 @@ class UsersController < Clearance::UsersController
   end
 
   def create
+    p 'ccccccrrrrrrreeeeeeeaaaaaattttttteeee - - - - - - - - - - - - - - - - '
     @user = user_from_params
 
     if @user.save
@@ -24,6 +25,7 @@ class UsersController < Clearance::UsersController
 
   def must_be_superadmin
     if current_user.try(:role) != 'superadmin'
+      flash[:notice] = "URL non autorisée"
       redirect_to Clearance.configuration.redirect_url
     end
   end
