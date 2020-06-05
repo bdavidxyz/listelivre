@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   post 'default/post_superadmin'
 
   get "/sign_up" => "users#new", as: "custom_sign_up"
+  get '/sign_out' => 'clearance/sessions#destroy'
   post "/users" => "users#create", as: "custom_users_path"
 
   root 'welcome#index'

@@ -1,6 +1,5 @@
 class UsersController < Clearance::UsersController
 
-  # skip_before_action :require_login, only: [:create, :new], raise: false
   skip_before_action :redirect_signed_in_users
   before_action :must_be_superadmin, only: [:create, :new]
 
