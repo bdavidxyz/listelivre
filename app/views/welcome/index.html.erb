@@ -1,3 +1,7 @@
+<% content_for :javascript do %>
+    <%= javascript_pack_tag 'welcome', 'data-turbolinks-track': 'reload' %>
+<% end %>
+
 <%- livres = local_assigns[:livres] %>
 <%= link_to "Ajouter vos livres", admin_root_path %>
 
@@ -6,24 +10,30 @@
 <h1>Bibliothèque sélidaire</h1>
 
 
-<table>
+<table id="main_table" class="books">
   <caption></caption>
   <thead>
     <tr>
       <th align="left">Titre</th>
       <th align="left">Auteur</th>
-      <th align="left">Séliste</th>
       <th align="left">Genre</th>
+      <th align="left">Séliste</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody class="list">
     <% livres.each do |livre| %>
       <tr>
-        <td align="left"><%= livre[:titre] %></td>
-        <td align="left"><%= livre[:auteur] %></td>
-        <td align="left"><%= livre[:proprietaire] %></td>
-        <td align="left"><%= livre[:genre] %></td>
+        <td align="left" class="titre"><%= livre[:titre] %></td>
+        <td align="left" class="auteur"><%= livre[:auteur] %></td>
+        <td align="left" class="genre"><%= livre[:genre] %></td>
+        <td align="left" class="proprietaire"><%= livre[:proprietaire] %></td>
       </tr>        
     <% end %>
   </tbody>
 </table>
+
+<style type="text/css">
+  #main_table_info {
+    display: none;
+  }
+</style>
