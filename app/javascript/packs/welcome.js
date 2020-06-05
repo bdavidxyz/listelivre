@@ -1,7 +1,8 @@
 import $ from 'jquery'
 import dt from 'datatables.net'
+import "datatables.mark.js";
 
-require('datatables.mark.js/dist/datatables.mark.es6.js');
+// require('datatables.mark.js/dist/datatables.mark.es6.js');
 
 $(document).ready( function () {
 
