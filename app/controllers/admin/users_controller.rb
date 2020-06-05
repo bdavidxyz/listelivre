@@ -1,6 +1,14 @@
 module Admin
   class UsersController < Admin::ApplicationController
-    
+
+    before_action :must_be_superadmin
+
+    def must_be_superadmin
+      if current_user.try(:role) != 'superadmin'
+        raise SecurityError
+      end
+    end
+
     def destroy
       if requested_resource.destroy
         Livre.where(proprietaire: initiales).destroy_all

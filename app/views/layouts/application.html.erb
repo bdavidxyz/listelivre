@@ -11,9 +11,11 @@
 
   <body id="livresel_body">
     <% flash.each do |type, msg| %>
+    <div>
       <mark>
         <%= msg %>
-      </mark>
+      </mark>      
+    </div>
     <% end %>
     <%= yield %>
   </body>

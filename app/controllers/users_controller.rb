@@ -1,7 +1,7 @@
 class UsersController < Clearance::UsersController
 
   skip_before_action :redirect_signed_in_users
-  before_action :must_be_superadmin, only: [:create, :new]
+  before_action :must_be_superadmin
 
   def new
     @user = user_from_params

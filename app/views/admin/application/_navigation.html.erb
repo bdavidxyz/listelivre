@@ -3,7 +3,7 @@
 <nav class="navigation" role="navigation">
 
   <div><span class="current-user"><%= current_user.email %></span></div>
-  <div><%= link_to 'Se déconnecter', sign_out_path, method: :delete, confirm: 'Êtes-vous sûr ?' %></div>
+  <div><%= link_to 'Se déconnecter', sign_out_path,  method: :delete %></div>
 
   <br>
   <br>
@@ -28,7 +28,7 @@
 
   <br>
   <br>
-  <div><%= link_to 'Supprimer mon compte', admin_user_path(current_user.id), method: :delete  %></div>
+  <div><%= link_to 'Supprimer mon compte', admin_user_path(current_user.id), data: { confirm: 'Êtes-vous sûr ? Votre compte et tous les livres associés seront supprimés définitivement' }, method: :delete, confirm: 'Êtes-vous sûr ?'  %></div>
 
 
 </nav>
