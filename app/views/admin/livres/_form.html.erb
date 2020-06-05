@@ -24,7 +24,7 @@
   <% end -%>
 
   <div class="form-actions">
-    <%= f.submit "Ajouter" %>
+    <%= f.submit "#{request.original_url.include?('edit') ? 'Modifier' : 'Ajouter' } " %>
   </div>
 <% end %>
 <script type="text/javascript">
