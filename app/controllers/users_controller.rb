@@ -10,7 +10,6 @@ class UsersController < Clearance::UsersController
   end
 
   def create
-    p 'ccccccrrrrrrreeeeeeeaaaaaattttttteeee - - - - - - - - - - - - - - - - '
     @user = user_from_params
 
     if @user.save
