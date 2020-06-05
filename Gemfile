@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 
 
 gem "administrate"
+gem 'administrate-field-enum'
 gem "clearance"
 
 # Reduces boot times through caching; required in config/boot.rb

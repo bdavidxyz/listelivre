@@ -6,6 +6,7 @@ class WelcomeController < ApplicationController
         titre: livre.titre,
         auteur: livre.auteur,
         proprietaire: livre.proprietaire,
+        genre: livre.genre,
       }
     end
     render locals: {

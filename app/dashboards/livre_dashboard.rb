@@ -11,11 +11,8 @@ class LivreDashboard < Administrate::BaseDashboard
     id: Field::Number,
     titre: Field::String,
     auteur: Field::String,
-    date_emprunt: Field::DateTime,
-    date_retour: Field::DateTime,
-    est_reserve: Field::Boolean,
     proprietaire: Field::String,
-    resume: Field::Text,
+    genre: Field::Enum,
   }.freeze
 
   # COLLECTION_ATTRIBUTES
@@ -27,6 +24,7 @@ class LivreDashboard < Administrate::BaseDashboard
   titre
   auteur
   proprietaire
+  genre
   ].freeze
 
   # SHOW_PAGE_ATTRIBUTES
@@ -35,6 +33,7 @@ class LivreDashboard < Administrate::BaseDashboard
   titre
   auteur
   proprietaire
+  genre
   ].freeze
 
   # FORM_ATTRIBUTES
@@ -44,6 +43,7 @@ class LivreDashboard < Administrate::BaseDashboard
   titre
   auteur
   proprietaire
+  genre
   ].freeze
 
   # COLLECTION_FILTERS

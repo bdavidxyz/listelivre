@@ -69,6 +69,8 @@ GEM
       momentjs-rails (~> 2.8)
       sassc-rails (~> 2.1)
       selectize-rails (~> 0.6)
+    administrate-field-enum (0.0.9)
+      administrate (~> 0.12)
     autoprefixer-rails (9.7.6)
       execjs
     bcrypt (3.1.13)
@@ -244,6 +246,7 @@ PLATFORMS
 
 DEPENDENCIES
   administrate
+  administrate-field-enum
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)
