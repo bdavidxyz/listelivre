@@ -7,10 +7,15 @@
 
   <div>
     <%= link_to(
+      "Ajouter un autre livre",
+      new_admin_livre_path,
+      class: "button",
+    ) %>
+    <%= link_to(
       "Modifier ce livre",
       [:edit, namespace, page.resource],
       class: "button",
-    ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
+    ) %>
   </div>
   <div>
     <%= link_to(
@@ -18,7 +23,7 @@
       admin_root_path,
       class: "button",
       style: "margin-left: 1rem"
-    ) if valid_action?(:edit) && show_action?(:edit, page.resource) %>
+    ) %>
   </div>
 </header>
 
