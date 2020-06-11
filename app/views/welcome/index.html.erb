@@ -3,7 +3,7 @@
 <% end %>
 
 <%- livres = local_assigns[:livres] %>
-<%= link_to "Ajouter vos livres", admin_root_path %>
+<%= link_to "Ajouter vos livres", admin_root_path, class: "add-your-books" %>
 
 <br>
 <div>&nbsp;</div>
@@ -38,5 +38,21 @@
   }
   #main_table th {
     cursor: pointer;
+  }
+  .add-your-books {
+    background-color: #1976d2;
+    border: 0;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 700;
+    line-height: 1;
+    padding: 0.75em 1.5em;
+    text-decoration: none;
+    transition: background-color 250ms ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
   }
 </style>
