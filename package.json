@@ -8,8 +8,7 @@
     "@rails/webpacker": "4.2.2",
     "mark.js": "^8.11.1",
     "datatables.mark.js": "^2.0.1",
-    "turbolinks": "^5.2.0",
-    "lodash": "4.17.19"
+    "turbolinks": "^5.2.0"
   },
   "version": "0.1.0",
   "devDependencies": {
