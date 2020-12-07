@@ -1,14 +1,26 @@
 <% content_for :javascript do %>
-    <%= javascript_pack_tag 'welcome', 'data-turbolinks-track': 'reload' %>
+<%= javascript_pack_tag 'welcome', 'data-turbolinks-track': 'reload' %>
 <% end %>
 
 <%- livres = local_assigns[:livres] %>
-<%= link_to "Ajouter vos livres", admin_root_path, class: "add-your-books" %>
+<% if current_user %>
+Bienvenue, <%= current_user.email %>
+<span style="display: flex;">
+  <%= button_to "Se déconnecter", sign_out_path, method: :delete %>
+  <%= link_to "Ajouter mes livres", admin_root_path, class: "add-your-books" %>
+</span>
+<% else %>
+<%= link_to "Se connecter", admin_root_path, class: "add-your-books" %>
+<% end %>
 
 <br>
 <div>&nbsp;</div>
-<h1>Bibliothèque sélidaire</h1>
-
+<h1>Bibliothèque de la transition</h1>
+<% if current_user %>
+  <p>Pour louer un livre, <strong>contactez directement le propriétaire en cliquant sur son email</strong></p>
+<% else %>
+  <p>Pour les habitants de La-Chapelle-sur-Erdre et ses environs</p>
+<% end %>
 
 <table id="main_table" class="books">
   <caption></caption>
@@ -17,17 +29,21 @@
       <th align="left">Titre ↓</th>
       <th align="left">Auteur ↓</th>
       <th align="left">Genre ↓</th>
-      <th align="left">Séliste ↓</th>
+      <% if livres.try('first').try(:[], :proprietaire) %>
+      <th align="left">Propriétaire ↓</th>
+      <% end %>
     </tr>
   </thead>
   <tbody class="list">
     <% livres.each do |livre| %>
-      <tr>
-        <td align="left" class="titre"><%= livre[:titre] %></td>
-        <td align="left" class="auteur"><%= livre[:auteur] %></td>
-        <td align="left" class="genre"><%= livre[:genre] %></td>
-        <td align="left" class="proprietaire"><%= livre[:proprietaire] %></td>
-      </tr>        
+    <tr>
+      <td align="left" class="titre"><%= livre[:titre] %></td>
+      <td align="left" class="auteur"><%= livre[:auteur] %></td>
+      <td align="left" class="genre"><%= livre[:genre] %></td>
+      <% if livre.try(:[], :proprietaire) %>
+      <td align="left" class="proprietaire"><%= livre[:proprietaire] %></td>
+      <% end %>
+    </tr>
     <% end %>
   </tbody>
 </table>
@@ -38,21 +54,5 @@
   }
   #main_table th {
     cursor: pointer;
-  }
-  .add-your-books {
-    background-color: #1976d2;
-    border: 0;
-    border-radius: 4px;
-    color: #fff;
-    cursor: pointer;
-    display: inline-block;
-    font-weight: 700;
-    line-height: 1;
-    padding: 0.75em 1.5em;
-    text-decoration: none;
-    transition: background-color 250ms ease-in-out;
-    user-select: none;
-    vertical-align: middle;
-    white-space: nowrap;
   }
 </style>

@@ -4,6 +4,7 @@ class Livre < ApplicationRecord
     essai: "essai", 
     roman: "roman", 
     cuisine: "cuisine", 
+    dvd: "DVD", 
     bd: "BD", 
     autre: "autre", 
   }
