@@ -12,9 +12,11 @@ Rails.application.routes.draw do
   get 'default/index'
   post 'default/post_superadmin'
 
-  get "/sign_up" => "users#new", as: "custom_sign_up"
-  delete '/sign_out' => 'sessions#destroy', as: "custom_sign_out"
+
   post "/users" => "users#create", as: "custom_users_path"
+  get "/sign_up" => "users#new", as: "custom_sign_up"
+
+  delete '/sign_out' => 'sessions#destroy', as: "custom_sign_out"
 
   root 'welcome#index'
 
