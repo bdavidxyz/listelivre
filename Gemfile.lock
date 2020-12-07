@@ -76,6 +76,7 @@ GEM
       ffi-compiler (>= 0.1)
     autoprefixer-rails (10.0.3.0)
       execjs
+    awesome_print (1.8.0)
     bcrypt (3.1.16)
     bindex (0.8.1)
     bootsnap (1.5.1)
@@ -254,6 +255,7 @@ PLATFORMS
 DEPENDENCIES
   administrate
   administrate-field-enum
+  awesome_print
   bootsnap (>= 1.4.2)
   byebug
   capybara (>= 2.15)

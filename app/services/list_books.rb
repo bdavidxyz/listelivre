@@ -1,6 +1,7 @@
 class ListBooks
 
   def call(current_user)
+    
     Livre.all.map do |livre|
       res = {
         titre: livre.titre,
@@ -12,6 +13,7 @@ class ListBooks
       end
       res
     end
+
   end
   
 end

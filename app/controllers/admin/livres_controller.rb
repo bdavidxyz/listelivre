@@ -5,7 +5,7 @@ module Admin
 
     def check_authorization
       if (current_user.role != "superadmin")    
-        if Livre.find(params["id"]).proprietaire != initiales
+        if Livre.find(params["id"]).proprietaire != _lien_proprio
           raise SecurityError
         end
       end
@@ -13,14 +13,14 @@ module Admin
 
     def scoped_resource
       if (current_user.role != "superadmin")
-        Livre.where(proprietaire: initiales)
+        Livre.where(proprietaire: _lien_proprio)
       else
         Livre.all
       end
     end
 
-    def initiales
-      current_user.email.split("@")[0]
+    def _lien_proprio
+      current_user.email
     end
 
   end

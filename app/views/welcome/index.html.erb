@@ -4,22 +4,24 @@
 
 <%- livres = local_assigns[:livres] %>
 <% if current_user %>
-Bienvenue, <%= current_user.email %>
-<span style="display: flex;">
-  <%= button_to "Se déconnecter", sign_out_path, method: :delete %>
-  <%= link_to "Ajouter mes livres", admin_root_path, class: "add-your-books" %>
-</span>
+  Bienvenue, <%= current_user.email %>
+  <span style="display: flex;">
+    <%= button_to "Se déconnecter", sign_out_path, method: :delete %>
+    <%= link_to "Ajouter mes livres", admin_root_path, class: "add-your-books" %>
+  </span>
 <% else %>
-<%= link_to "Se connecter", admin_root_path, class: "add-your-books" %>
+  <span style="display: flex;">
+    <%= link_to "Se connecter", admin_root_path, class: "add-your-books" %>
+  </span>
 <% end %>
 
 <br>
 <div>&nbsp;</div>
 <h1>Bibliothèque de la transition</h1>
 <% if current_user %>
-  <p>Pour louer un livre, <strong>contactez directement le propriétaire en cliquant sur son email</strong></p>
+<p>Pour louer un livre, <strong>contactez directement le propriétaire via son email</strong></p>
 <% else %>
-  <p>Pour les habitants de La-Chapelle-sur-Erdre et ses environs</p>
+<p>Pour les habitants de La-Chapelle-sur-Erdre et ses environs : prêt de livres entre particulier sur le sujet de la transition. Pas besoin de Facebook ni Google, une adresse e-mail suffit. Contactez David ou Gaëlle pour utiliser le service.</p>
 <% end %>
 
 <table id="main_table" class="books">
@@ -54,5 +56,20 @@ Bienvenue, <%= current_user.email %>
   }
   #main_table th {
     cursor: pointer;
+  }
+  .add-your-books {
+    background-color: #1976d2;
+    border-radius: 4px;
+    color: #fff;
+    cursor: pointer;
+    font-weight: 700;
+    line-height: 2.3;
+    padding: 0em .75em;
+    text-decoration: none;
+    transition: background-color 250ms ease-in-out;
+    user-select: none;
+    vertical-align: middle;
+    white-space: nowrap;
+    height: 37px;
   }
 </style>
