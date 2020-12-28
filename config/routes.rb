@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   end
 
   get 'welcome/index'
-  
+
+  get '/conditions' => 'pages#conditions'
+
   get 'default/index'
   post 'default/post_superadmin'
 
