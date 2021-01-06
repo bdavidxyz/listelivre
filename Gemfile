@@ -24,6 +24,7 @@ gem "clearance"
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
+gem "nokogiri", ">= 1.11.0.rc4"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
