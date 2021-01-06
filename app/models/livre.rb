@@ -7,6 +7,7 @@ class Livre < ApplicationRecord
     dvd: "DVD", 
     bd: "BD", 
     autre: "autre", 
+    guide_pratique: "guide pratique", 
     magazine: "magazine", 
     jeu_de_societe: "jeu_de_societe", 
   }

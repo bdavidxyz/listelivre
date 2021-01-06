@@ -7,7 +7,7 @@
   Bienvenue, <%= current_user.email %>
   <span style="display: flex;">
     <%= button_to "Se déconnecter", sign_out_path, method: :delete %>
-    <%= link_to "Ajouter mes livres", admin_root_path, class: "add-your-books" %>
+    <%= link_to "Ajouter/modifier un livre", admin_root_path, class: "add-your-books" %>
   </span>
 <% else %>
   <span style="display: flex;">
